@@ -36,7 +36,7 @@
     
     <!-- Theme script to prevent FOUC -->
     <script>
-      (function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark');}catch(e){}})();
+      (function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':false;if(d)document.documentElement.classList.add('dark');}catch(e){}})();
     </script>
   </head>
   <body>
