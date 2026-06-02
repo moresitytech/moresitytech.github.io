@@ -55,7 +55,7 @@ export function Footer() {
                 <img
                   src="/logo3-transparent.png"
                   alt="Moresity logo"
-                  className="w-full h-full object-contain bg-transparent"
+                  className="w-full h-full object-contain bg-transparent dark:invert"
                   loading="lazy"
                   decoding="async"
                   onError={(e) => {
@@ -64,7 +64,7 @@ export function Footer() {
                   }}
                 />
               </div>
-              <span className="font-display text-base font-bold tracking-tight text-[#26015f]">
+              <span className="font-display text-base font-bold tracking-tight text-[#26015f] dark:text-white">
                 Moresity<span className="text-[#f1645b]">.tech</span>
               </span>{" "}
             </Link>
