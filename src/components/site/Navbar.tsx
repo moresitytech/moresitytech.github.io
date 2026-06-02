@@ -113,7 +113,7 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2 }}
-              className="glass mt-2 rounded-2xl p-3 lg:hidden"
+              className="mt-2 rounded-2xl border border-border bg-surface-elevated/95 p-3 backdrop-blur-lg lg:hidden shadow-soft"
             >
               <div className="grid gap-1">
                 {NAV.map((item) => (

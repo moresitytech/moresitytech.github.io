@@ -70,8 +70,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 const themeScript = `(function(){try{var t=localStorage.getItem('theme');var d=t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark');}catch(e){}})();`;
-const launchAt = new Date("2026-06-01T20:00:00");
-const launchLabel = "June 1, 2026 at 8:00 PM";
+const launchAt = new Date("2026-06-02T20:00:00");
+const launchLabel = "June 2, 2026 at 8:00 PM";
 
 type CountdownState = {
   total: number;
@@ -322,9 +322,15 @@ function RootComponent() {
       return;
     }
 
-    setShowReveal(true);
-    const timer = window.setTimeout(() => setShowReveal(false), 5000);
-    return () => window.clearTimeout(timer);
+    const hasSeenWelcome = localStorage.getItem("hasSeenWelcome");
+    if (!hasSeenWelcome) {
+      setShowReveal(true);
+      localStorage.setItem("hasSeenWelcome", "true");
+      const timer = window.setTimeout(() => setShowReveal(false), 5000);
+      return () => window.clearTimeout(timer);
+    } else {
+      setShowReveal(false);
+    }
   }, [countdown.total]);
 
   if (countdown.total > 0) {
