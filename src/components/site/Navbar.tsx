@@ -60,11 +60,11 @@ export function Navbar() {
               <img
                 src={logoTransparent}
                 alt="Moresity logo"
-                className="w-full h-full object-contain bg-transparent"
+                className="w-full h-full object-contain bg-transparent dark:invert"
                 decoding="async"
               />
             </div>
-            <span className="font-display text-base font-bold tracking-tight text-[#26015f]">
+            <span className="font-display text-base font-bold tracking-tight text-[#26015f] dark:text-white">
               Moresity<span className="text-[#f1645b]">.tech</span>
             </span>
           </Link>
