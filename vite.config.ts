@@ -10,7 +10,7 @@ export default defineConfig({
     tsconfigPaths(),
     tailwindcss(),
   ],
-  base: '/MoresityPortfolio/',
+  base: '/',
   build: {
     outDir: 'dist',
     sourcemap: false,
