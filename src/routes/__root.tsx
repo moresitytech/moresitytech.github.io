@@ -308,6 +308,78 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
+  head: () => ({
+    meta: [
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+      { name: "theme-color", content: "#3b82f6" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+      { name: "format-detection", content: "telephone=no" },
+      // Google Search Console verification (if needed)
+      { name: "google-site-verification", content: "YOUR_GOOGLE_VERIFICATION_CODE" },
+      // Language
+      { "http-equiv": "Content-Language", content: "en" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://tech.moresityholdings.com.np/" },
+      { rel: "sitemap", href: "/sitemap.xml", type: "application/xml" },
+      { rel: "alternate", hrefLang: "en", href: "https://tech.moresityholdings.com.np/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Moresity Tech",
+          url: "https://tech.moresityholdings.com.np/",
+          logo: "https://tech.moresityholdings.com.np/logo.png",
+          description: "Enterprise-grade software studio building SaaS, web, mobile and AI products",
+          sameAs: [
+            "https://www.linkedin.com/company/moresity-tech",
+            "https://twitter.com/moresity_tech",
+            "https://github.com/moresity",
+          ],
+          contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "Business Development",
+            telephone: "+977-9808827451",
+            email: "info@moresity.com",
+          },
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Bhaktapur",
+            addressCountry: "NP",
+          },
+          foundingDate: "2025-04-01",
+          founder: [
+            { "@type": "Person", name: "Saurav Dhoju" },
+            { "@type": "Person", name: "Abishek Suwal" },
+            { "@type": "Person", name: "Rupesh Mahat" },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          url: "https://tech.moresityholdings.com.np/",
+          name: "Moresity Tech",
+          description: "Software studio building enterprise-grade SaaS, web, mobile and AI solutions",
+          potentialAction: {
+            "@type": "SearchAction",
+            target: {
+              "@type": "EntryPoint",
+              urlTemplate: "https://tech.moresityholdings.com.np/search?q={search_term_string}",
+            },
+            query_input: "required name=search_term_string",
+          },
+        }),
+      },
+    ],
+  }),
 });
 
 function RootComponent() {

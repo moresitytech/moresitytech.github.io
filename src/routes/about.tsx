@@ -12,14 +12,76 @@ export const Route = createFileRoute("/about")({
         content:
           "We are a senior team of engineers, designers and product thinkers crafting software that lasts. Learn our story, values and team.",
       },
+      { name: "keywords", content: "software studio, team, mission, values, engineers, designers" },
       { property: "og:title", content: "About — Moresity Tech" },
       {
         property: "og:description",
         content: "Our story, mission and the team behind Moresity Tech.",
       },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://tech.moresityholdings.com.np/about" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://tech.moresityholdings.com.np/about" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://tech.moresityholdings.com.np/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "About",
+              item: "https://tech.moresityholdings.com.np/about",
+            },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Moresity Tech",
+          url: "https://tech.moresityholdings.com.np/",
+          description: "Senior software studio building enterprise SaaS, web, mobile and AI products",
+          foundingDate: "2025-04-01",
+          founders: [
+            {
+              "@type": "Person",
+              name: "Saurav Dhoju",
+              jobTitle: "Co-Founder & Frontend Lead",
+              email: "saurav@moresity.tech",
+              telephone: "+977-9808827451",
+            },
+            {
+              "@type": "Person",
+              name: "Abishek Suwal",
+              jobTitle: "Co-Founder & Backend Architect",
+              email: "abishek@moresity.tech",
+              telephone: "+977-9849099814",
+            },
+          ],
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Bhaktapur",
+            addressCountry: "NP",
+          },
+          contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "Business Development",
+            telephone: "+977-9808827451",
+            email: "info@moresity.com",
+          },
+        }),
+      },
+    ],
   }),
   component: AboutPage,
 });

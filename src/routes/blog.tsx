@@ -9,11 +9,48 @@ export const Route = createFileRoute("/blog")({
     meta: [
       { title: "Insights & Articles — Moresity Tech" },
       { name: "description", content: "Essays and field notes on building modern software: SaaS, AI, performance, design systems and team craft." },
+      { name: "keywords", content: "software engineering, SaaS, AI, design systems, product development, blog" },
       { property: "og:title", content: "Insights — Moresity Tech" },
       { property: "og:description", content: "Field notes on building modern software." },
-      { property: "og:url", content: "/blog" },
+      { property: "og:url", content: "https://tech.moresityholdings.com.np/blog" },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: "https://tech.moresityholdings.com.np/blog" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://tech.moresityholdings.com.np/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Blog",
+              item: "https://tech.moresityholdings.com.np/blog",
+            },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "Moresity Tech Blog",
+          description: "Essays and field notes on building modern software",
+          publisher: {
+            "@type": "Organization",
+            name: "Moresity Tech",
+          },
+        }),
+      },
+    ],
   }),
   component: BlogPage,
 });

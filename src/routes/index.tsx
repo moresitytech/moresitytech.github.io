@@ -30,14 +30,65 @@ export const Route = createFileRoute("/")({
         content:
           "We design and engineer enterprise-grade software products — SaaS platforms, mobile apps, AI tools, and digital experiences that scale.",
       },
+      { name: "keywords", content: "SaaS development, web development, mobile apps, AI solutions, software studio, Nepal" },
       { property: "og:title", content: "Moresity Tech — Premium Software Studio" },
       {
         property: "og:description",
         content: "Enterprise-grade SaaS, web, mobile and AI products for ambitious teams.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://tech.moresityholdings.com.np/" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Moresity Tech — Premium Software Studio" },
+      { name: "twitter:description", content: "Enterprise-grade SaaS, web, mobile and AI products." },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://tech.moresityholdings.com.np/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://tech.moresityholdings.com.np/",
+            },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Moresity Tech",
+          image: "https://tech.moresityholdings.com.np/logo.png",
+          description: "Premium software studio building enterprise SaaS, web, mobile and AI products",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Bhaktapur",
+            addressCountry: "NP",
+          },
+          telephone: "+977-9808827451",
+          email: "info@moresity.com",
+          url: "https://tech.moresityholdings.com.np/",
+          areaServed: ["World"],
+          knowsAbout: [
+            "Web Development",
+            "SaaS Development",
+            "Mobile App Development",
+            "AI Solutions",
+            "Cloud Infrastructure",
+            "UI/UX Design",
+            "Digital Marketing",
+            "SEO Optimization",
+          ],
+        }),
+      },
+    ],
   }),
   component: HomePage,
 });

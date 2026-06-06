@@ -18,11 +18,35 @@ export const Route = createFileRoute("/projects")({
         content:
           "Selected case studies of SaaS, AI, fintech and mobile products we've designed and engineered for clients worldwide.",
       },
+      { name: "keywords", content: "case studies, portfolio, projects, SaaS, web development, mobile apps" },
       { property: "og:title", content: "Work — Moresity Tech" },
       { property: "og:description", content: "Featured case studies and outcomes." },
-      { property: "og:url", content: "/projects" },
+      { property: "og:url", content: "https://tech.moresityholdings.com.np/projects" },
     ],
-    links: [{ rel: "canonical", href: "/projects" }],
+    links: [{ rel: "canonical", href: "https://tech.moresityholdings.com.np/projects" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://tech.moresityholdings.com.np/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Projects",
+              item: "https://tech.moresityholdings.com.np/projects",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: ProjectsPage,
 });

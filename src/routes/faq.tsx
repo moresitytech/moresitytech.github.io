@@ -44,12 +44,33 @@ export const Route = createFileRoute("/faq")({
     meta: [
       { title: "FAQ — Moresity Tech" },
       { name: "description", content: "Answers about engagements, pricing, process, services and support at Moresity Tech." },
+      { name: "keywords", content: "FAQ, frequently asked questions, pricing, services, support" },
       { property: "og:title", content: "FAQ — Moresity Tech" },
       { property: "og:description", content: "Frequently asked questions about working with us." },
-      { property: "og:url", content: "/faq" },
+      { property: "og:url", content: "https://tech.moresityholdings.com.np/faq" },
     ],
-    links: [{ rel: "canonical", href: "/faq" }],
+    links: [{ rel: "canonical", href: "https://tech.moresityholdings.com.np/faq" }],
     scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://tech.moresityholdings.com.np/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "FAQ",
+            item: "https://tech.moresityholdings.com.np/faq",
+          },
+        ],
+      }),
+    }, {
       type: "application/ld+json",
       children: JSON.stringify({
         "@context": "https://schema.org",

@@ -12,11 +12,35 @@ export const Route = createFileRoute("/careers")({
         content:
           "Join a senior team building software that matters. Open roles in engineering, design and AI.",
       },
+      { name: "keywords", content: "careers, jobs, hiring, engineering, design, remote work" },
       { property: "og:title", content: "Careers — Moresity Tech" },
       { property: "og:description", content: "Open roles and what it's like to work with us." },
-      { property: "og:url", content: "/careers" },
+      { property: "og:url", content: "https://tech.moresityholdings.com.np/careers" },
     ],
-    links: [{ rel: "canonical", href: "/careers" }],
+    links: [{ rel: "canonical", href: "https://tech.moresityholdings.com.np/careers" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://tech.moresityholdings.com.np/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Careers",
+              item: "https://tech.moresityholdings.com.np/careers",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: CareersPage,
 });

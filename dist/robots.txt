@@ -1,2 +1,19 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /_*
+Disallow: /api/
+
+Sitemap: https://tech.moresityholdings.com.np/sitemap.xml
+
+# Google Search Console
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay settings
+User-agent: *
+Crawl-delay: 0

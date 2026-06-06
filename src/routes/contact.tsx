@@ -13,14 +13,38 @@ export const Route = createFileRoute("/contact")({
         name: "description",
         content: "Tell us about your project. We'll reply within 24 hours with next steps.",
       },
+      { name: "keywords", content: "contact, get in touch, inquiry, project request, consultation" },
       { property: "og:title", content: "Contact — Moresity Tech" },
       {
         property: "og:description",
         content: "Start a project, book a discovery call, or say hello.",
       },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: "https://tech.moresityholdings.com.np/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://tech.moresityholdings.com.np/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://tech.moresityholdings.com.np/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Contact",
+              item: "https://tech.moresityholdings.com.np/contact",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: ContactPage,
 });

@@ -8,11 +8,35 @@ export const Route = createFileRoute("/testimonials")({
     meta: [
       { title: "Testimonials & Stories — Moresity Tech" },
       { name: "description", content: "What clients say about partnering with Moresity Tech — video stories, written reviews and real outcomes." },
+      { name: "keywords", content: "testimonials, reviews, client feedback, success stories, case studies" },
       { property: "og:title", content: "Client stories — Moresity Tech" },
       { property: "og:description", content: "Reviews and stories from our clients." },
-      { property: "og:url", content: "/testimonials" },
+      { property: "og:url", content: "https://tech.moresityholdings.com.np/testimonials" },
     ],
-    links: [{ rel: "canonical", href: "/testimonials" }],
+    links: [{ rel: "canonical", href: "https://tech.moresityholdings.com.np/testimonials" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://tech.moresityholdings.com.np/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Testimonials",
+              item: "https://tech.moresityholdings.com.np/testimonials",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: TestimonialsPage,
 });
