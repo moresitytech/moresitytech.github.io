@@ -357,6 +357,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             { "@type": "Person", name: "Saurav Dhoju" },
             { "@type": "Person", name: "Abishek Suwal" },
             { "@type": "Person", name: "Rupesh Mahat" },
+            { "@type": "Person", name: "Nikil Shrestha" },
           ],
         }),
       },
