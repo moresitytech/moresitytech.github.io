@@ -1,56 +1,56 @@
 name: Deploy static Next.js export to cPanel via SFTP
 
 on:
-push:
-branches: [main]
-workflow_dispatch:
+  push:
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
-contents: read
+  contents: read
 
 jobs:
-build-and-deploy:
-runs-on: ubuntu-latest
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-steps:
-  - name: Checkout repository
-    uses: actions/checkout@v4
+      - name: Install pnpm 
+        uses: pnpm/action-setup@v4 
+        with: 
+          version: 10
 
-  - name: Install pnpm
-    uses: pnpm/action-setup@v4
-    with:
-      version: 10
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
 
-  - name: Setup Node.js
-    uses: actions/setup-node@v4
-    with:
-      node-version: 20
-      cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-  - name: Install dependencies
-    run: pnpm install --frozen-lockfile
+      - name: Build Next.js static export
+        run: pnpm build
 
-  - name: Build Next.js static export
-    run: pnpm build
+      - name: Install deployment tools
+        run: sudo apt-get update && sudo apt-get install -y sshpass rsync
 
-  - name: Install deployment tools
-    run: |
-      sudo apt-get update
-      sudo apt-get install -y sshpass rsync
-
-  - name: Deploy out folder to cPanel via SFTP
-    env:
-      CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
-      CPANEL_PORT: 22
-      CPANEL_USER: ${{ secrets.CPANEL_USERNAME }}
-      CPANEL_PASSWORD: ${{ secrets.CPANEL_PASSWORD }}
-      CPANEL_PATH: ${{ secrets.CPANEL_DEPLOY_PATH }}
-    run: |
-      sshpass -p "$CPANEL_PASSWORD" rsync \
-        -avz \
-        --delete \
-        -e "ssh -o StrictHostKeyChecking=no -p $CPANEL_PORT" \
-        out/ \
-        "$CPANEL_USER@$CPANEL_HOST:$CPANEL_PATH/"
-
+      - name: Deploy `out` folder to cPanel via SFTP
+        env:
+          CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
+          CPANEL_PORT: 22
+          CPANEL_USER: ${{ secrets.CPANEL_USERNAME }}
+          CPANEL_PASSWORD: ${{ secrets.CPANEL_PASSWORD }}
+          CPANEL_PATH: ${{ secrets.CPANEL_DEPLOY_PATH }}
+        run: |
+          mkdir -p ~/.ssh
+          cat > ~/.ssh/config <<'EOF'
+          Host cpanel-server
+            HostName $CPANEL_HOST
+            User $CPANEL_USER
+            Port ${CPANEL_PORT:-22}
+            StrictHostKeyChecking no
+            UserKnownHostsFile=/dev/null
+          EOF
+          sshpass -p "$CPANEL_PASSWORD" rsync -avz --delete -e "ssh -F ~/.ssh/config" out/ cpanel-server:"$CPANEL_PATH"
