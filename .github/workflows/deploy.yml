@@ -36,17 +36,18 @@ jobs:
       - name: Install deployment tools
         run: sudo apt-get update && sudo apt-get install -y sshpass rsync
 
-      - name: Deploy `out` folder to cPanel via SFTP
+      - name: Deploy out folder to cPanel via SFTP
         env:
-          CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
-          CPANEL_PORT: 22
-          CPANEL_USER: ${{ secrets.CPANEL_USERNAME }}
-          CPANEL_PASSWORD: ${{ secrets.CPANEL_PASSWORD }}
-          CPANEL_PATH: ${{ secrets.CPANEL_DEPLOY_PATH }}
+        CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
+        CPANEL_PORT: "22"
+        CPANEL_USER: ${{ secrets.CPANEL_USERNAME }}
+        CPANEL_PASSWORD: ${{ secrets.CPANEL_PASSWORD }}
+        CPANEL_PATH: ${{ secrets.CPANEL_DEPLOY_PATH }}
         run: |
-          sshpass -p "$CPANEL_PASSWORD" rsync 
-          -avz 
-          --delete 
-          -e "ssh -F ~/.ssh/config" 
-          out/ 
-          cpanel-server:"$CPANEL_PATH"
+          echo "Deploying to $CPANEL_HOST"
+
+          sshpass -p "$CPANEL_PASSWORD" rsync -avz --delete 
+          -e "ssh -p $CPANEL_PORT -o StrictHostKeyChecking=no" 
+          ./out/ 
+          "$CPANEL_USER@$CPANEL_HOST:$CPANEL_PATH/"
+
