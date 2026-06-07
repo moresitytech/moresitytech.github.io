@@ -44,13 +44,9 @@ jobs:
           CPANEL_PASSWORD: ${{ secrets.CPANEL_PASSWORD }}
           CPANEL_PATH: ${{ secrets.CPANEL_DEPLOY_PATH }}
         run: |
-          mkdir -p ~/.ssh
-          cat > ~/.ssh/config <<'EOF'
-          Host cpanel-server
-            HostName $CPANEL_HOST
-            User $CPANEL_USER
-            Port ${CPANEL_PORT:-22}
-            StrictHostKeyChecking no
-            UserKnownHostsFile=/dev/null
-          EOF
-          sshpass -p "$CPANEL_PASSWORD" rsync -avz --delete -e "ssh -F ~/.ssh/config" out/ cpanel-server:"$CPANEL_PATH"
+          sshpass -p "$CPANEL_PASSWORD" rsync 
+          -avz 
+          --delete 
+          -e "ssh -F ~/.ssh/config" 
+          out/ 
+          cpanel-server:"$CPANEL_PATH"
