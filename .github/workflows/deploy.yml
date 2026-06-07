@@ -1,8 +1,9 @@
-name: Deploy static Next.js export to cPanel via SFTP
+name: Deploy Next.js Static Export to cPanel
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -13,44 +14,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install pnpm 
-        uses: pnpm/action-setup@v4 
-        with: 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
           version: 10
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          node-version: 20
+          cache: pnpm
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build Next.js static export
+      - name: Build Next.js Static Export
         run: pnpm build
 
-      - name: Install deployment tools
-        run: sudo apt-get update && sudo apt-get install -y sshpass rsync
-
-      - name: Deploy `out` folder to cPanel via SFTP (rsync)
-        env:
-          CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
-          CPANEL_PORT: ${{ secrets.CPANEL_PORT }}
-          CPANEL_USER: ${{ secrets.CPANEL_USERNAME }}
-          CPANEL_PASSWORD: ${{ secrets.CPANEL_PASSWORD }}
-          CPANEL_PATH: ${{ secrets.CPANEL_DEPLOY_PATH }}
+      - name: Verify Export Folder
         run: |
-          set -euo pipefail
-          echo "--- Deployment debug info ---"
-          echo "rsync version: $(rsync --version | head -n1 || true)"
-          echo "ssh version: $(ssh -V 2>&1 || true)"
-          echo "Host: $CPANEL_HOST"
-          echo "User: $CPANEL_USER"
-          echo "Path: $CPANEL_PATH"
-          echo "--- Running rsync ---"
-          : "${CPANEL_PORT:=22}"
-          sshpass -p "$CPANEL_PASSWORD" rsync -avz --delete -e "ssh -p ${CPANEL_PORT} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" out/ "${CPANEL_USER}@${CPANEL_HOST}:${CPANEL_PATH}"
+          ls -la
+          ls -la out
+
+      - name: Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: /public_html/
+          dangerous-clean-slate: true
