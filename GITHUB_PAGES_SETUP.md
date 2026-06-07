@@ -57,11 +57,11 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '20'
-      
+          node-version: "20"
+
       - run: npm ci
       - run: npm run build
-      
+
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
@@ -91,11 +91,13 @@ npm run preview
 The app makes API calls to `http://localhost:5000` by default (for development).
 
 For production, set the environment variable:
+
 ```bash
 VITE_API_BASE=https://your-api-domain.com
 ```
 
 If you don't need a backend, you can:
+
 1. Mock the API endpoints in the components
 2. Use static JSON files in the `public/` folder
 3. Use a headless CMS
@@ -110,12 +112,15 @@ If you don't need a backend, you can:
 ## Troubleshooting
 
 ### 404 on Page Refresh
+
 This is expected with hash routing. Hard refresh (Ctrl+Shift+R) to reload.
 
 ### CSS Not Loading
+
 Make sure you're accessing the correct path: `https://username.github.io/MoresityPortfolio/`
 
 ### API Calls Failing
+
 Check that `VITE_API_BASE` is set correctly and your API has CORS enabled.
 
 ---

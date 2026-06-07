@@ -1,4 +1,4 @@
-export const API_BASE = import.meta.env.VITE_API_BASE ?? "http://localhost:5000";
+export const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:5000";
 
 export type ApiError = {
   status: number;
@@ -15,8 +15,9 @@ async function handle<T>(response: Response): Promise<T> {
 }
 
 export const api = {
-  get: async <T,>(path: string) => handle<T>(await fetch(`${API_BASE}${path}`, { credentials: "include" })),
-  post: async <T,>(path: string, body: unknown) =>
+  get: async <T>(path: string) =>
+    handle<T>(await fetch(`${API_BASE}${path}`, { credentials: "include" })),
+  post: async <T>(path: string, body: unknown) =>
     handle<T>(
       await fetch(`${API_BASE}${path}`, {
         method: "POST",
@@ -25,7 +26,7 @@ export const api = {
         body: JSON.stringify(body),
       }),
     ),
-  put: async <T,>(path: string, body: unknown) =>
+  put: async <T>(path: string, body: unknown) =>
     handle<T>(
       await fetch(`${API_BASE}${path}`, {
         method: "PUT",
@@ -34,5 +35,6 @@ export const api = {
         body: JSON.stringify(body),
       }),
     ),
-  del: async <T,>(path: string) => handle<T>(await fetch(`${API_BASE}${path}`, { method: "DELETE", credentials: "include" })),
+  del: async <T>(path: string) =>
+    handle<T>(await fetch(`${API_BASE}${path}`, { method: "DELETE", credentials: "include" })),
 };

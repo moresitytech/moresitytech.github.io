@@ -34,7 +34,9 @@ export function SectionHeader({
       </Reveal>
       {description && (
         <Reveal delay={0.1}>
-          <p className="mt-5 text-pretty text-base text-muted-foreground md:text-lg">{description}</p>
+          <p className="mt-5 text-pretty text-base text-muted-foreground md:text-lg">
+            {description}
+          </p>
         </Reveal>
       )}
     </div>

@@ -3,6 +3,7 @@
 ## 🎯 What You Need to Do Now
 
 ### 1. **Google Search Console** (HIGHEST PRIORITY)
+
 ```
 URL: https://search.google.com/search-console
 Steps:
@@ -14,6 +15,7 @@ Steps:
 ```
 
 ### 2. **Test Your Markup**
+
 ```
 Rich Results Test: https://search.google.com/test/rich-results
 Schema Validator: https://validator.schema.org/
@@ -25,6 +27,7 @@ Test these URLs:
 ```
 
 ### 3. **Google Business Profile** (For Local SEO)
+
 ```
 URL: https://business.google.com
 Setup:
@@ -41,31 +44,32 @@ Setup:
 
 ## 📊 Files Modified
 
-| File | Changes | Impact |
-|------|---------|--------|
-| `sitemap[.]xml.ts` | Added full URLs, lastmod dates, priorities | ✅ Pages indexed faster |
-| `robots.txt` | Added sitemap, crawl rules | ✅ Better crawl efficiency |
-| `__root.tsx` | Organization + WebSite schema | ✅ Knowledge panel eligible |
-| All route files | BreadcrumbList + full URLs + keywords | ✅ Better ranking + snippets |
-| `index.html` | Already had good meta tags | ✅ Social sharing optimized |
+| File               | Changes                                    | Impact                       |
+| ------------------ | ------------------------------------------ | ---------------------------- |
+| `sitemap[.]xml.ts` | Added full URLs, lastmod dates, priorities | ✅ Pages indexed faster      |
+| `robots.txt`       | Added sitemap, crawl rules                 | ✅ Better crawl efficiency   |
+| `__root.tsx`       | Organization + WebSite schema              | ✅ Knowledge panel eligible  |
+| All route files    | BreadcrumbList + full URLs + keywords      | ✅ Better ranking + snippets |
+| `index.html`       | Already had good meta tags                 | ✅ Social sharing optimized  |
 
 ---
 
 ## 🚀 Ranking Expectations
 
-| Timeframe | Metric | Target |
-|-----------|--------|--------|
-| Week 1-2 | Indexing | ✅ All pages indexed |
-| Month 1 | Branded Search | ✅ Rank #1 for "moresity tech" |
+| Timeframe | Metric           | Target                                           |
+| --------- | ---------------- | ------------------------------------------------ |
+| Week 1-2  | Indexing         | ✅ All pages indexed                             |
+| Month 1   | Branded Search   | ✅ Rank #1 for "moresity tech"                   |
 | Month 2-3 | Service Keywords | Top 50 for "SaaS development", "web development" |
-| Month 4-6 | Blog Keywords | Rank for long-tail keywords |
-| Month 6+ | Authority | 100+ organic visits/month |
+| Month 4-6 | Blog Keywords    | Rank for long-tail keywords                      |
+| Month 6+  | Authority        | 100+ organic visits/month                        |
 
 ---
 
 ## 💡 Content Strategy for Ranking
 
 ### Blog Posts to Write (2000+ words each)
+
 ```
 Priority 1 (This Month):
 - "How We Built the InvoMaster SaaS Platform"
@@ -84,6 +88,7 @@ Priority 3 (Month 3):
 ```
 
 ### Internal Linking Strategy
+
 ```
 Each blog post should link to:
 - Relevant service page (/services)
@@ -102,17 +107,20 @@ Example for "InvoMaster Case Study":
 ## ✅ SEO Checklist - Month 1
 
 ### Week 1
+
 - [ ] Verify domain in Google Search Console
 - [ ] Submit sitemap
 - [ ] Create Google Business Profile
 - [ ] Run Rich Results Test
 
 ### Week 2-3
+
 - [ ] Write first blog post (2000+ words)
 - [ ] Create detailed case study
 - [ ] Get first backlink (any mention counts)
 
 ### Week 4
+
 - [ ] Monitor GSC performance
 - [ ] Check indexing status
 - [ ] Analyze organic traffic
@@ -122,10 +130,12 @@ Example for "InvoMaster Case Study":
 ## 🔍 Keyword Targets
 
 ### Primary (Brand)
+
 - "moresity tech"
 - "moresity holdings"
 
 ### Secondary (Service)
+
 - "SaaS development"
 - "web development Nepal"
 - "software studio"
@@ -133,6 +143,7 @@ Example for "InvoMaster Case Study":
 - "AI solutions Nepal"
 
 ### Long-tail
+
 - "how to build SaaS products"
 - "best software development company Nepal"
 - "TypeScript SaaS development"
@@ -143,6 +154,7 @@ Example for "InvoMaster Case Study":
 ## 📈 Performance Monitoring
 
 ### Monthly Tasks
+
 1. Check Google Search Console:
    - Total clicks
    - Impressions
@@ -164,6 +176,7 @@ Example for "InvoMaster Case Study":
 ## 🛠️ Technical Details
 
 ### Sitemap
+
 ```
 Path: /sitemap.xml
 Auto-generates:
@@ -175,6 +188,7 @@ Auto-generates:
 ```
 
 ### robots.txt
+
 ```
 Blocks: /admin/, /_*, /api/
 Allows: Everything else
@@ -182,6 +196,7 @@ Includes: Sitemap location
 ```
 
 ### Schema Markup
+
 - 🟢 Organization (root)
 - 🟢 WebSite (root)
 - 🟢 LocalBusiness (home)
@@ -205,14 +220,14 @@ Includes: Sitemap location
 
 ## 📞 Support Links
 
-| Tool | Purpose | Link |
-|------|---------|------|
-| Google Search Console | Monitor rankings | search.google.com/search-console |
-| Rich Results Test | Validate schema | search.google.com/test/rich-results |
-| PageSpeed Insights | Check speed | pagespeed.web.dev |
-| Mobile Friendly Test | Check mobile | search.google.com/test/mobile-friendly |
-| Schema Validator | Validate markup | validator.schema.org |
-| Google Business | Local SEO | business.google.com |
+| Tool                  | Purpose          | Link                                   |
+| --------------------- | ---------------- | -------------------------------------- |
+| Google Search Console | Monitor rankings | search.google.com/search-console       |
+| Rich Results Test     | Validate schema  | search.google.com/test/rich-results    |
+| PageSpeed Insights    | Check speed      | pagespeed.web.dev                      |
+| Mobile Friendly Test  | Check mobile     | search.google.com/test/mobile-friendly |
+| Schema Validator      | Validate markup  | validator.schema.org                   |
+| Google Business       | Local SEO        | business.google.com                    |
 
 ---
 

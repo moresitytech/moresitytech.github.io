@@ -1,11 +1,11 @@
-const path = require('path');
-const Jimp = require('jimp');
+const path = require("path");
+const Jimp = require("jimp");
 
 (async () => {
-  const inPath = path.resolve(__dirname, '../public/logo3.png');
-  const outPath = path.resolve(__dirname, '../public/logo3-transparent.png');
+  const inPath = path.resolve(__dirname, "../public/logo3.png");
+  const outPath = path.resolve(__dirname, "../public/logo3-transparent.png");
 
-  console.log('Reading', inPath);
+  console.log("Reading", inPath);
   const img = await Jimp.read(inPath);
   img.rgba(true);
   const { width: w, height: h } = img.bitmap;
@@ -21,10 +21,11 @@ const Jimp = require('jimp');
     rgba(img.getPixelColor(w - 1, h - 1)),
   ];
 
-  const avg = corners.reduce(
-    (acc, c) => ({ r: acc.r + c.r, g: acc.g + c.g, b: acc.b + c.b }),
-    { r: 0, g: 0, b: 0 },
-  );
+  const avg = corners.reduce((acc, c) => ({ r: acc.r + c.r, g: acc.g + c.g, b: acc.b + c.b }), {
+    r: 0,
+    g: 0,
+    b: 0,
+  });
   avg.r = Math.round(avg.r / corners.length);
   avg.g = Math.round(avg.g / corners.length);
   avg.b = Math.round(avg.b / corners.length);
@@ -47,7 +48,7 @@ const Jimp = require('jimp');
   }
 
   await img.writeAsync(outPath);
-  console.log('Wrote', outPath);
+  console.log("Wrote", outPath);
 })().catch((err) => {
   console.error(err);
   process.exit(1);

@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
 
@@ -59,13 +61,7 @@ export function Stagger({
   );
 }
 
-export function StaggerItem({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+export function StaggerItem({ children, className }: { children: ReactNode; className?: string }) {
   return (
     <motion.div
       className={className}

@@ -9,13 +9,16 @@ Your Moresity Tech portfolio now has **comprehensive SEO optimization** to ensur
 ## 🎯 What You Got
 
 ### 1. **Dynamic XML Sitemap** (/sitemap.xml)
+
 ✅ **Automatically generates** your site's map for search engines
+
 - Updates daily with current date
 - Includes all 9 pages with proper priorities
 - Valid XML schema with xsi:schemaLocation
 - Base URL: `https://tech.moresityholdings.com.np`
 
 **Priority Levels**:
+
 ```
 Home          → 1.0  (highest)
 Services      → 0.95
@@ -29,45 +32,56 @@ FAQ           → 0.7
 ```
 
 ### 2. **Enhanced robots.txt**
+
 ✅ **Guides search engines** on what to crawl
+
 - Sitemap URL included
 - Specific rules for Google and Bing
 - Blocks admin/API paths
 - Zero crawl delay (fastest indexing)
 
 ### 3. **Structured Data (JSON-LD Schema)**
+
 ✅ **Rich results** that show in Google search
 
 **Root Level** (`__root.tsx`):
+
 - 🔷 Organization schema (company info)
 - 🔷 WebSite schema (voice search enabled)
 
 **Home Page** (`index.tsx`):
+
 - 🔷 LocalBusiness schema (address, phone, email)
 - 🔷 BreadcrumbList schema
 - 🔷 Keywords: "SaaS development, web development, AI solutions, Nepal"
 
 **Services Page** (`services.tsx`):
+
 - 🔷 Service schema with 8 service offerings
 - 🔷 Detailed offers with descriptions
 
 **FAQ Page** (`faq.tsx`):
+
 - 🔷 FAQPage schema (appears as rich snippets in search results)
 - 🔷 All 16 Q&As structured for Google
 
 **Blog Page** (`blog.tsx`):
+
 - 🔷 Blog schema with multiple articles
 
 **All Other Pages** (`about, projects, blog, contact, careers, testimonials`):
+
 - 🔷 BreadcrumbList schema
 - 🔷 Full absolute URLs in canonical links
 - 🔷 Meta descriptions optimized for CTR
 - 🔷 Keywords per page
 
 ### 4. **Meta Tags Optimization**
+
 ✅ **Proper titles, descriptions, and social tags**
 
 Every page now has:
+
 - 📝 Optimized title tags (includes keywords)
 - 📝 Meta descriptions (150-160 chars)
 - 📝 Keywords metadata
@@ -76,7 +90,9 @@ Every page now has:
 - 📝 Twitter Card tags (Twitter sharing)
 
 ### 5. **Full HTTPS Canonical URLs**
+
 ✅ **Prevents duplicate content** issues
+
 - Every page uses: `https://tech.moresityholdings.com.np/[path]`
 - Absolute URLs (not relative)
 - Consistent across all pages
@@ -85,26 +101,27 @@ Every page now has:
 
 ## 📊 Files Modified
 
-| File | Change | Impact |
-|------|--------|--------|
-| **sitemap[.]xml.ts** | Added BASE_URL + lastmod + priorities | ✅ Faster indexing |
-| **robots.txt** | Added sitemap + crawl rules | ✅ Better crawl efficiency |
-| **__root.tsx** | Organization + WebSite schema | ✅ Knowledge panel eligible |
-| **index.tsx** | LocalBusiness + BreadcrumbList schema | ✅ Local search ranking |
-| **services.tsx** | Service schema with offers | ✅ Rich snippets for services |
-| **projects.tsx** | BreadcrumbList + keywords | ✅ Better internal linking |
-| **blog.tsx** | Blog schema + keywords | ✅ Blog content visible |
-| **about.tsx** | Organization schema + founders | ✅ Team credibility |
-| **contact.tsx** | BreadcrumbList + keywords | ✅ Contact form optimization |
-| **careers.tsx** | BreadcrumbList + keywords | ✅ Careers SEO |
-| **testimonials.tsx** | BreadcrumbList + keywords | ✅ Social proof visible |
-| **faq.tsx** | FAQPage schema + breadcrumbs | ✅ Rich snippet eligible |
+| File                 | Change                                | Impact                        |
+| -------------------- | ------------------------------------- | ----------------------------- |
+| **sitemap[.]xml.ts** | Added BASE_URL + lastmod + priorities | ✅ Faster indexing            |
+| **robots.txt**       | Added sitemap + crawl rules           | ✅ Better crawl efficiency    |
+| **\_\_root.tsx**     | Organization + WebSite schema         | ✅ Knowledge panel eligible   |
+| **index.tsx**        | LocalBusiness + BreadcrumbList schema | ✅ Local search ranking       |
+| **services.tsx**     | Service schema with offers            | ✅ Rich snippets for services |
+| **projects.tsx**     | BreadcrumbList + keywords             | ✅ Better internal linking    |
+| **blog.tsx**         | Blog schema + keywords                | ✅ Blog content visible       |
+| **about.tsx**        | Organization schema + founders        | ✅ Team credibility           |
+| **contact.tsx**      | BreadcrumbList + keywords             | ✅ Contact form optimization  |
+| **careers.tsx**      | BreadcrumbList + keywords             | ✅ Careers SEO                |
+| **testimonials.tsx** | BreadcrumbList + keywords             | ✅ Social proof visible       |
+| **faq.tsx**          | FAQPage schema + breadcrumbs          | ✅ Rich snippet eligible      |
 
 ---
 
 ## 🚀 What This Means for Your Rankings
 
 ### Search Results Improvement
+
 ```
 BEFORE: Plain text listing
 Moresity Tech
@@ -117,13 +134,16 @@ Enterprise-grade SaaS, web, mobile and AI products...
 ```
 
 ### Search Visibility
+
 When someone searches:
+
 - ✅ "moresity tech" → Rank #1 (weeks 2-4)
 - ✅ "SaaS development" → Top 50 (month 3-6)
 - ✅ "web development Nepal" → Top 50 (month 4-6)
 - ✅ "software studio Nepal" → Top 30 (month 6+)
 
 ### Traffic Projection
+
 ```
 Month 1: ~50-100 organic visits
 Month 2: ~150-250 organic visits
@@ -136,6 +156,7 @@ Month 6: ~500-1000+ organic visits
 ## ✅ Immediate Next Steps (This Week)
 
 ### 1. **Verify in Google Search Console** (CRITICAL)
+
 ```
 1. Go to: https://search.google.com/search-console
 2. Click "Add property"
@@ -147,6 +168,7 @@ Month 6: ~500-1000+ organic visits
 ```
 
 ### 2. **Test Your Rich Results**
+
 ```
 1. Go to: https://search.google.com/test/rich-results
 2. Test these URLs:
@@ -157,6 +179,7 @@ Month 6: ~500-1000+ organic visits
 ```
 
 ### 3. **Create Google Business Profile**
+
 ```
 1. Go to: https://business.google.com
 2. Create profile for "Moresity Tech"
@@ -170,30 +193,36 @@ Month 6: ~500-1000+ organic visits
 ## 📈 Content Strategy for Growth
 
 ### Blog Posts (Start Writing)
+
 Best topics to rank for:
 
 **Month 1-2**:
+
 - "How We Built the InvoMaster SaaS Platform" (target: SaaS development)
 - "Complete Guide to Building a SaaS Product" (target: SaaS development)
 - "Why We Use TypeScript for Everything" (target: TypeScript development)
 
 **Month 3-4**:
+
 - "Case Study: Juri Inc Ecommerce Platform" (target: case studies)
 - "Mobile App Development in 2026" (target: mobile development)
 - "AI Integration in Modern Web Apps" (target: AI solutions)
 
 **Month 5-6**:
+
 - "Design Systems That Actually Scale" (target: design systems)
 - "Cloud Architecture for SaaS" (target: cloud solutions)
 - "Our Complete Tech Stack Breakdown" (target: tech stack)
 
 Each blog post should:
+
 - 📄 2000+ words
 - 🔗 Internal links to /services, /projects, /contact
 - 🎯 Target 3-5 keywords per post
 - 📊 Include metrics/results where possible
 
 ### Internal Linking Strategy
+
 ```
 Blog Post → Links to:
 ├── Relevant service page (/services)
@@ -208,10 +237,12 @@ Blog Post → Links to:
 ## 🔍 Keyword Targets
 
 ### Primary (Brand)
+
 - "moresity tech" ← Easiest, should rank in weeks
 - "moresity holdings"
 
 ### Secondary (Competitive)
+
 - "SaaS development" (High value)
 - "software studio" (Medium value)
 - "web development Nepal" (Medium value)
@@ -219,6 +250,7 @@ Blog Post → Links to:
 - "AI solutions" (Medium value)
 
 ### Long-tail (Easy Quick Wins)
+
 - "how to build SaaS products"
 - "TypeScript SaaS development"
 - "design systems for startups"
@@ -230,6 +262,7 @@ Blog Post → Links to:
 ## 📊 Monthly Monitoring Checklist
 
 ### Week 1 of Every Month
+
 ```
 □ Check Google Search Console:
   - Total impressions
@@ -251,6 +284,7 @@ Blog Post → Links to:
 ```
 
 ### Monthly Content Review
+
 ```
 □ Publish new blog post (1x/month minimum)
 □ Update old content (refresh old posts)
@@ -264,6 +298,7 @@ Blog Post → Links to:
 ## 🎓 Key SEO Concepts Applied
 
 ### ✅ On-Page SEO
+
 - Title tags with primary keywords
 - Meta descriptions optimized for CTR
 - Proper heading hierarchy
@@ -271,6 +306,7 @@ Blog Post → Links to:
 - Internal linking structure
 
 ### ✅ Technical SEO
+
 - XML sitemap generation
 - robots.txt optimization
 - Canonical URLs
@@ -280,6 +316,7 @@ Blog Post → Links to:
 - HTTPS ✅ (assumed)
 
 ### ✅ Structured Data
+
 - Organization schema
 - LocalBusiness schema
 - Service schema
@@ -288,6 +325,7 @@ Blog Post → Links to:
 - WebSite schema
 
 ### ✅ User Experience
+
 - Clear navigation
 - Mobile friendly
 - Fast loading
@@ -299,6 +337,7 @@ Blog Post → Links to:
 ## 🛠️ Technical Details for Developers
 
 ### Sitemap Generation
+
 ```typescript
 // Auto-generates on: /sitemap.xml
 const BASE_URL = "https://tech.moresityholdings.com.np";
@@ -307,6 +346,7 @@ const lastmod = new Date().toISOString().split("T")[0]; // Today's date
 ```
 
 ### robots.txt Rules
+
 ```
 Allow: / (everything)
 Block: /admin/, /_*, /api/
@@ -315,12 +355,17 @@ Zero crawl delay for fast indexing
 ```
 
 ### Schema Implementation
+
 ```typescript
 // In each route head() method:
-scripts: [{
-  type: "application/ld+json",
-  children: JSON.stringify({ /* schema object */ })
-}]
+scripts: [
+  {
+    type: "application/ld+json",
+    children: JSON.stringify({
+      /* schema object */
+    }),
+  },
+];
 ```
 
 ---
@@ -359,21 +404,25 @@ scripts: [{
 ## 🎯 Success Metrics to Track
 
 ### By Week 2
+
 - ✅ All pages indexed in Google
 - ✅ Schema validated with no errors
 - ✅ Google Search Console showing impressions
 
 ### By Month 1
+
 - ✅ Branded search ranking #1-3
 - ✅ 50-100 organic visits
 - ✅ 3-5 search queries in GSC
 
 ### By Month 3
+
 - ✅ 300+ organic visits/month
 - ✅ 5-10 keywords ranking top 50
 - ✅ 1-2 blog posts published
 
 ### By Month 6
+
 - ✅ 500-1000+ organic visits/month
 - ✅ 20+ keywords ranking top 50
 - ✅ Authority established
@@ -382,15 +431,15 @@ scripts: [{
 
 ## 🔗 Essential Links
 
-| Purpose | Link |
-|---------|------|
-| **Google Search Console** | https://search.google.com/search-console |
-| **Your Sitemap** | https://tech.moresityholdings.com.np/sitemap.xml |
-| **Test Rich Results** | https://search.google.com/test/rich-results |
-| **Mobile Test** | https://search.google.com/test/mobile-friendly |
-| **Google Business** | https://business.google.com |
-| **Schema Validator** | https://validator.schema.org |
-| **PageSpeed Test** | https://pagespeed.web.dev |
+| Purpose                   | Link                                             |
+| ------------------------- | ------------------------------------------------ |
+| **Google Search Console** | https://search.google.com/search-console         |
+| **Your Sitemap**          | https://tech.moresityholdings.com.np/sitemap.xml |
+| **Test Rich Results**     | https://search.google.com/test/rich-results      |
+| **Mobile Test**           | https://search.google.com/test/mobile-friendly   |
+| **Google Business**       | https://business.google.com                      |
+| **Schema Validator**      | https://validator.schema.org                     |
+| **PageSpeed Test**        | https://pagespeed.web.dev                        |
 
 ---
 
@@ -419,18 +468,21 @@ A: Optional. Great for quick traffic but organic is better ROI long-term.
 ## 📞 Next Steps
 
 ### This Week
+
 - [ ] Submit to Google Search Console
 - [ ] Verify domain ownership
 - [ ] Add sitemap
 - [ ] Test rich results
 
 ### This Month
+
 - [ ] Create Google Business Profile
 - [ ] Write first blog post
 - [ ] Analyze GSC data
 - [ ] Start outreach for backlinks
 
 ### This Quarter
+
 - [ ] Publish 6-8 blog posts
 - [ ] Build 5-10 quality backlinks
 - [ ] Optimize top pages

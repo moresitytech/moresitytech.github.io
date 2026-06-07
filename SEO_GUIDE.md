@@ -9,6 +9,7 @@ This document outlines the comprehensive SEO strategy and implementation for **M
 ## ✅ What Has Been Implemented
 
 ### 1. **Dynamic XML Sitemap** (/sitemap.xml)
+
 - **Location**: `src/routes/sitemap[.]xml.ts`
 - **Base URL**: `https://tech.moresityholdings.com.np`
 - **Includes all pages** with proper priority levels:
@@ -23,11 +24,13 @@ This document outlines the comprehensive SEO strategy and implementation for **M
   - FAQ - Priority: 0.7, Monthly
 
 **Auto Features**:
+
 - ✅ Automatic lastmod date generation (updates daily)
 - ✅ Proper XML schema validation
 - ✅ Cached for 1 hour for performance
 
 ### 2. **Enhanced robots.txt**
+
 - **Location**: `public/robots.txt`
 - **Features**:
   - Allow all crawlers to index public content
@@ -39,6 +42,7 @@ This document outlines the comprehensive SEO strategy and implementation for **M
 ### 3. **Structured Data (JSON-LD Schema)**
 
 #### Organization Schema (`__root.tsx`)
+
 ```json
 {
   "@type": "Organization",
@@ -51,25 +55,30 @@ This document outlines the comprehensive SEO strategy and implementation for **M
 ```
 
 #### WebSite Schema (`__root.tsx`)
+
 - Enables voice search optimization
 - Provides site search capability to Google
 - Improves knowledge panel visibility
 
 #### Service Schema (`services.tsx`)
+
 - Lists all 8 services with descriptions
 - Helps Google understand what you offer
 
 #### LocalBusiness Schema (`index.tsx`)
+
 - Address information
 - Business contact details
 - Service area (World)
 
 #### BreadcrumbList Schema (All pages)
+
 - Improves internal linking structure
 - Helps users navigate from search results
 - Shows site hierarchy
 
 #### FAQPage Schema (`faq.tsx`)
+
 - Structured Q&A format
 - Appears in search results as rich snippets
 - Improves CTR (click-through rate)
@@ -77,26 +86,31 @@ This document outlines the comprehensive SEO strategy and implementation for **M
 ### 4. **Meta Tags Optimization**
 
 #### Title Tags (Per Page)
+
 - **Home**: "Moresity Tech — Premium Software, SaaS & AI Studio"
 - **Services**: "Services — Web, SaaS, Mobile, AI | Moresity Tech"
 - **Projects**: "Work & Case Studies — Moresity Tech"
 - All titles include primary keywords
 
 #### Meta Descriptions
+
 - 150-160 characters each
 - Compelling copy with CTAs
 - Includes keywords naturally
 
 #### Open Graph Tags
+
 - `og:title`, `og:description`, `og:url`, `og:type`
 - `og:image` for social sharing
 - Optimized for LinkedIn, Facebook, Twitter
 
 #### Twitter Card Tags
+
 - `twitter:card: summary_large_image`
 - Social sharing optimization
 
 ### 5. **Canonical Links**
+
 - Every page has proper canonical URL
 - Prevents duplicate content issues
 - Full absolute URLs (HTTPS)
@@ -104,6 +118,7 @@ This document outlines the comprehensive SEO strategy and implementation for **M
 ### 6. **Keyword Optimization**
 
 **Primary Keywords**:
+
 - "Moresity Tech" (branded)
 - "Software Studio" / "Software Development Studio"
 - "SaaS Development"
@@ -113,6 +128,7 @@ This document outlines the comprehensive SEO strategy and implementation for **M
 - "Nepal Tech Company"
 
 **Secondary Keywords** (per page):
+
 - Services: "Web development, SaaS, mobile apps, AI, cloud, design, SEO, digital marketing"
 - Projects: "Case studies, portfolio, projects, SaaS, web development"
 - Blog: "Software engineering, SaaS, AI, design systems, product development"
@@ -123,7 +139,9 @@ This document outlines the comprehensive SEO strategy and implementation for **M
 ## 🎯 Ranking Strategy
 
 ### Phase 1: Foundation (Current)
+
 ✅ **Completed**:
+
 - Sitemap creation
 - robots.txt optimization
 - JSON-LD schema setup
@@ -132,7 +150,9 @@ This document outlines the comprehensive SEO strategy and implementation for **M
 - Breadcrumb structure
 
 ### Phase 2: Content Growth (Next 3 months)
+
 **Action Items**:
+
 1. **Blog Content** (High Priority)
    - Publish 2-3 articles/month on topics:
      - "How to Build SaaS Products in 2026"
@@ -153,12 +173,14 @@ This document outlines the comprehensive SEO strategy and implementation for **M
    - Include metrics: time saved, revenue impact, etc.
 
 ### Phase 3: Link Building (3-6 months)
+
 - Guest posts on tech blogs (dev.to, Medium)
 - Directory submissions (startup directories)
 - Local business listings (Google Business Profile)
 - Backlinks from industry sites
 
 ### Phase 4: Local SEO (Ongoing)
+
 - Google Business Profile optimization
 - Local Nepali business directories
 - "Best Tech Companies in Nepal" targeting
@@ -170,17 +192,20 @@ This document outlines the comprehensive SEO strategy and implementation for **M
 ### Search Visibility Timeline
 
 **Month 1-2**:
+
 - Indexed in Google, Bing, other engines
 - Rankings for branded terms ("moresity tech")
 - Organic traffic: 50-100 visits/month
 
 **Month 3-4**:
+
 - Blog content starts ranking
 - Long-tail keywords appearing
 - Organic traffic: 200-400 visits/month
 - Rankings for "SaaS development", "web development"
 
 **Month 6+**:
+
 - Full keyword targeting in top 50
 - Featured snippets for FAQ content
 - Organic traffic: 500-1000+ visits/month
@@ -191,6 +216,7 @@ This document outlines the comprehensive SEO strategy and implementation for **M
 ## 🔧 Technical SEO Checklist
 
 ### ✅ Already Done
+
 - [x] XML Sitemap with all pages
 - [x] robots.txt with proper directives
 - [x] Meta tags (title, description)
@@ -205,6 +231,7 @@ This document outlines the comprehensive SEO strategy and implementation for **M
 ### ⏳ To Implement (Optional)
 
 1. **Google Search Console** (PRIORITY)
+
    ```
    - Verify ownership via DNS/HTML tag
    - Submit sitemap
@@ -214,6 +241,7 @@ This document outlines the comprehensive SEO strategy and implementation for **M
    ```
 
 2. **Google Business Profile**
+
    ```
    - Create company listing
    - Add business info
@@ -242,6 +270,7 @@ This document outlines the comprehensive SEO strategy and implementation for **M
 ## 📝 Maintenance & Updates
 
 ### Monthly Tasks
+
 1. **Monitor Search Console**
    - Check for crawl errors
    - Review search performance
@@ -257,6 +286,7 @@ This document outlines the comprehensive SEO strategy and implementation for **M
    - Manually update when major changes made
 
 ### Quarterly Tasks
+
 1. **Keyword Rankings**
    - Check rankings for target keywords
    - Adjust content strategy
@@ -277,33 +307,36 @@ This document outlines the comprehensive SEO strategy and implementation for **M
 
 ## 🔗 Important URLs
 
-| Purpose | URL |
-|---------|-----|
-| Sitemap | https://tech.moresityholdings.com.np/sitemap.xml |
-| Home | https://tech.moresityholdings.com.np/ |
-| Services | https://tech.moresityholdings.com.np/services |
-| Projects | https://tech.moresityholdings.com.np/projects |
-| Blog | https://tech.moresityholdings.com.np/blog |
-| Contact | https://tech.moresityholdings.com.np/contact |
-| FAQ | https://tech.moresityholdings.com.np/faq |
+| Purpose  | URL                                              |
+| -------- | ------------------------------------------------ |
+| Sitemap  | https://tech.moresityholdings.com.np/sitemap.xml |
+| Home     | https://tech.moresityholdings.com.np/            |
+| Services | https://tech.moresityholdings.com.np/services    |
+| Projects | https://tech.moresityholdings.com.np/projects    |
+| Blog     | https://tech.moresityholdings.com.np/blog        |
+| Contact  | https://tech.moresityholdings.com.np/contact     |
+| FAQ      | https://tech.moresityholdings.com.np/faq         |
 
 ---
 
 ## 🚀 Quick Start Checklist
 
 ### Immediate Actions (This Week)
+
 - [ ] Submit sitemap to Google Search Console
 - [ ] Verify domain in GSC
 - [ ] Create Google Business Profile
 - [ ] Add schema markup validation (rich results test)
 
 ### Short Term (This Month)
+
 - [ ] Write 2-3 blog posts
 - [ ] Create detailed case studies
 - [ ] Set up Google Analytics 4
 - [ ] Configure GSC alerts
 
 ### Medium Term (3 Months)
+
 - [ ] Publish blog content regularly
 - [ ] Build backlinks (guest posts)
 - [ ] Optimize images
@@ -342,18 +375,21 @@ This document outlines the comprehensive SEO strategy and implementation for **M
 ## 🎓 Resources & Tools
 
 ### Essential Tools
+
 - **Google Search Console** - Free SEO monitoring
 - **Google Analytics 4** - Traffic analysis
 - **Lighthouse** - Performance audits
 - **Mobile-Friendly Test** - Mobile compatibility
 
 ### Recommended Tools
+
 - **Semrush** / **Ahrefs** - Competitor analysis
 - **Yoast SEO** - Content optimization
 - **Screaming Frog** - Technical audits
 - **Ubersuggest** - Keyword research
 
 ### Documentation
+
 - [Google Search Central](https://developers.google.com/search)
 - [Schema.org](https://schema.org/)
 - [MDN Web Docs](https://developer.mozilla.org/)
@@ -382,6 +418,7 @@ A: Add `hrefLang` tags if expanding to multiple countries.
 ## 📞 Support
 
 For implementation help or questions:
+
 - Review the sitemap generation in `src/routes/sitemap[.]xml.ts`
 - Check meta tags in each route file
 - Validate schema at [Google Rich Results Test](https://search.google.com/test/rich-results)

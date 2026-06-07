@@ -1,4 +1,6 @@
-import { Link } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
 import { Github, Linkedin, Twitter, Instagram, ArrowUpRight, Facebook } from "lucide-react";
 
 const COLS = [
@@ -50,7 +52,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 md:px-6">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr]">
           <div>
-            <Link to="/" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <div className="relative size-12 w-12 h-12 overflow-hidden rounded-full bg-transparent shadow-elegant">
                 <img
                   src="/logo3-transparent.png"
@@ -58,10 +60,6 @@ export function Footer() {
                   className="w-full h-full object-contain bg-transparent dark:invert"
                   loading="lazy"
                   decoding="async"
-                  onError={(e) => {
-                    e.currentTarget.onerror = null;
-                    e.currentTarget.src = "/logo3.png";
-                  }}
                 />
               </div>
               <span className="font-display text-base font-bold tracking-tight text-[#26015f] dark:text-white">
@@ -115,7 +113,7 @@ export function Footer() {
                   {col.links.map((l, i) => (
                     <li key={i}>
                       <Link
-                        to={l.to}
+                        href={l.to}
                         className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                       >
                         {l.label}

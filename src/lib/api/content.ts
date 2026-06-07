@@ -43,7 +43,11 @@ export const getProjects = () => api.get<Project[]>("/api/content/projects");
 export const getTestimonials = () => api.get<Testimonial[]>("/api/content/testimonials");
 export const getHomepage = () => api.get<HomepageContent>("/api/content/homepage");
 
-export const useServices = () => useQuery(["content", "services"], getServices, { staleTime: 60_000 });
-export const useProjects = () => useQuery(["content", "projects"], getProjects, { staleTime: 60_000 });
-export const useTestimonials = () => useQuery(["content", "testimonials"], getTestimonials, { staleTime: 60_000 });
-export const useHomepage = () => useQuery(["content", "homepage"], getHomepage, { staleTime: 60_000 });
+export const useServices = () =>
+  useQuery({ queryKey: ["content", "services"], queryFn: getServices, staleTime: 60_000 });
+export const useProjects = () =>
+  useQuery({ queryKey: ["content", "projects"], queryFn: getProjects, staleTime: 60_000 });
+export const useTestimonials = () =>
+  useQuery({ queryKey: ["content", "testimonials"], queryFn: getTestimonials, staleTime: 60_000 });
+export const useHomepage = () =>
+  useQuery({ queryKey: ["content", "homepage"], queryFn: getHomepage, staleTime: 60_000 });

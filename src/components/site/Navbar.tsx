@@ -1,4 +1,7 @@
-import { Link } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Moon, Sun } from "lucide-react";
@@ -19,6 +22,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -55,10 +59,10 @@ export function Navbar() {
             scrolled && "glass border-border shadow-soft",
           )}
         >
-          <Link to="/" className="group flex items-center ">
+          <Link href="/" className="group flex items-center ">
             <div className="relative size-12 w-12 h-12 overflow-hidden rounded-full bg-transparent shadow-elegant">
               <img
-                src={logoTransparent}
+                src={typeof logoTransparent === "string" ? logoTransparent : logoTransparent.src}
                 alt="Moresity logo"
                 className="w-full h-full object-contain bg-transparent dark:invert"
                 decoding="async"
@@ -70,16 +74,22 @@ export function Navbar() {
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
-            {NAV.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className="rounded-full px-3.5 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground data-[status=active]:bg-secondary data-[status=active]:text-foreground"
-                activeOptions={{ exact: item.to === "/" }}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {NAV.map((item) => {
+              const isActive =
+                pathname === item.to || (item.to !== "/" && pathname.startsWith(item.to));
+              return (
+                <Link
+                  key={item.to}
+                  href={item.to}
+                  className={cn(
+                    "rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors hover:bg-secondary hover:text-foreground",
+                    isActive ? "bg-secondary text-foreground" : "text-muted-foreground",
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-2">
@@ -91,7 +101,7 @@ export function Navbar() {
               {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
             </button>
             <Link
-              to="/contact"
+              href="/contact"
               className="hidden rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background shadow-soft transition-transform hover:scale-[1.02] sm:inline-flex"
             >
               Start a project
@@ -116,17 +126,23 @@ export function Navbar() {
               className="mt-2 rounded-2xl border border-border bg-surface-elevated/95 p-3 backdrop-blur-lg lg:hidden shadow-soft"
             >
               <div className="grid gap-1">
-                {NAV.map((item) => (
-                  <Link
-                    key={item.to}
-                    to={item.to}
-                    onClick={() => setOpen(false)}
-                    className="rounded-xl px-4 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground data-[status=active]:bg-secondary data-[status=active]:text-foreground"
-                    activeOptions={{ exact: item.to === "/" }}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                {NAV.map((item) => {
+                  const isActive =
+                    pathname === item.to || (item.to !== "/" && pathname.startsWith(item.to));
+                  return (
+                    <Link
+                      key={item.to}
+                      href={item.to}
+                      onClick={() => setOpen(false)}
+                      className={cn(
+                        "rounded-xl px-4 py-2.5 text-sm font-medium transition-colors hover:bg-secondary hover:text-foreground",
+                        isActive ? "bg-secondary text-foreground" : "text-muted-foreground",
+                      )}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
               </div>
             </motion.div>
           )}

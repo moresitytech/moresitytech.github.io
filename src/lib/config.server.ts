@@ -1,20 +1,14 @@
 import process from "node:process";
 
-// Server-only config. The .server.ts suffix prevents Vite from bundling
-// this file into the client — values here never reach the browser.
+// Server-only config.
 //
-// On Cloudflare Workers, env binds at REQUEST time. Module-scope reads
-// (e.g. `const x = process.env.X`) resolve to undefined — always read
-// process.env INSIDE a function or handler.
+// In Next.js, this file can be used to manage server-side environment variables.
+// Use process.env INSIDE a function or handler to ensure values are read correctly.
 //
 // When to use which env-access pattern:
-//   - .server.ts module (this file): server-only helpers reused across
-//     handlers. Wrap reads in a function so they run per-request.
-//   - inline process.env inside a createServerFn handler: one-off reads
-//     not reused elsewhere.
-//   - import.meta.env.VITE_FOO: PUBLIC config readable from both client
-//     and server (analytics IDs, public URLs). Define in .env with the
-//     VITE_ prefix. Never put secrets here — they ship to the browser.
+//   - .server.ts module (this file): server-only helpers. Wrap reads in a function.
+//   - NEXT_PUBLIC_ prefix: config readable from both client and server.
+//   - process.env without prefix: server-side only secrets.
 
 export function getServerConfig() {
   return {
