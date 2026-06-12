@@ -6,10 +6,22 @@ export const metadata: Metadata = {
   description:
     "Selected case studies of SaaS, AI, fintech and mobile products we've designed and engineered for clients worldwide.",
   keywords: ["case studies, portfolio, projects, SaaS, web development, mobile apps"],
+  alternates: {
+    canonical: "https://tech.moresityholdings.com.np/projects",
+  },
   openGraph: {
-    title: "Work — Moresity Tech",
-    description: "Featured case studies and outcomes.",
+    title: "Work & Case Studies — Moresity Tech",
+    description:
+      "Selected case studies of SaaS, AI, fintech and mobile products we've designed and engineered for clients worldwide.",
     url: "https://tech.moresityholdings.com.np/projects",
+    images: [
+      {
+        url: "https://tech.moresityholdings.com.np/logo3-transparent.png",
+        width: 1200,
+        height: 630,
+        alt: "Moresity Tech Projects",
+      },
+    ],
   },
 };
 

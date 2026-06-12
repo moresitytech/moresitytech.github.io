@@ -5,10 +5,21 @@ export const metadata: Metadata = {
   title: "Contact",
   description: "Tell us about your project. We'll reply within 24 hours with next steps.",
   keywords: ["contact, get in touch, inquiry, project request, consultation"],
+  alternates: {
+    canonical: "https://tech.moresityholdings.com.np/contact",
+  },
   openGraph: {
     title: "Contact — Moresity Tech",
     description: "Start a project, book a discovery call, or say hello.",
     url: "https://tech.moresityholdings.com.np/contact",
+    images: [
+      {
+        url: "https://tech.moresityholdings.com.np/logo3-transparent.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact Moresity Tech",
+      },
+    ],
   },
 };
 

@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
-Disallow: /_*
 Disallow: /api/
 
 Sitemap: https://tech.moresityholdings.com.np/sitemap.xml

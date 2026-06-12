@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Providers } from "./Providers";
-import { LaunchManager } from "./LaunchManager";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { ScrollProgress } from "@/components/site/ScrollProgress";
@@ -37,6 +36,14 @@ export const metadata: Metadata = {
     url: "https://tech.moresityholdings.com.np/",
     siteName: "Moresity Tech",
     type: "website",
+    images: [
+      {
+        url: "https://tech.moresityholdings.com.np/logo3-transparent.png",
+        width: 1200,
+        height: 630,
+        alt: "Moresity Tech Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -44,7 +51,7 @@ export const metadata: Metadata = {
     description: "Enterprise-grade SaaS, web, mobile and AI products.",
   },
   other: {
-    "google-site-verification": "YOUR_GOOGLE_VERIFICATION_CODE",
+    "google-site-verification": "google4ce39e9424ce6c15",
   },
 };
 
@@ -118,16 +125,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="antialiased">
         <Providers>
-          <LaunchManager>
-            <div className="relative min-h-screen">
-              <ScrollProgress />
-              <Navbar />
-              <main id="main" className="min-h-screen pt-24">
-                {children}
-              </main>
-              <Footer />
-            </div>
-          </LaunchManager>
+          <div className="relative min-h-screen">
+            <ScrollProgress />
+            <Navbar />
+            <main id="main" className="min-h-screen pt-24">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>

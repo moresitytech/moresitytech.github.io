@@ -15,10 +15,22 @@ export const metadata: Metadata = {
     "SEO",
     "digital marketing",
   ],
+  alternates: {
+    canonical: "https://tech.moresityholdings.com.np/services",
+  },
   openGraph: {
-    title: "Services — Moresity Tech",
-    description: "Web, SaaS, mobile, AI, cloud, design, SEO, marketing.",
+    title: "Services — Web, SaaS, Mobile, AI | Moresity Tech",
+    description:
+      "End-to-end services: web & SaaS development, mobile apps, AI solutions, cloud, design, SEO and digital marketing.",
     url: "https://tech.moresityholdings.com.np/services",
+    images: [
+      {
+        url: "https://tech.moresityholdings.com.np/logo3-transparent.png",
+        width: 1200,
+        height: 630,
+        alt: "Moresity Tech Services",
+      },
+    ],
   },
 };
 

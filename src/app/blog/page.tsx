@@ -6,10 +6,21 @@ export const metadata: Metadata = {
   description:
     "Essays and field notes on building modern software: SaaS, AI, performance, design systems and team craft.",
   keywords: ["software engineering, SaaS, AI, design systems, product development, blog"],
+  alternates: {
+    canonical: "https://tech.moresityholdings.com.np/blog",
+  },
   openGraph: {
     title: "Insights — Moresity Tech",
     description: "Field notes on building modern software.",
     url: "https://tech.moresityholdings.com.np/blog",
+    images: [
+      {
+        url: "https://tech.moresityholdings.com.np/logo3-transparent.png",
+        width: 1200,
+        height: 630,
+        alt: "Moresity Tech Blog",
+      },
+    ],
   },
 };
 

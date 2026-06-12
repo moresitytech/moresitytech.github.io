@@ -6,10 +6,21 @@ export const metadata: Metadata = {
   description:
     "What clients say about partnering with Moresity Tech — video stories, written reviews and real outcomes.",
   keywords: ["testimonials, reviews, client feedback, success stories, case studies"],
+  alternates: {
+    canonical: "https://tech.moresityholdings.com.np/testimonials",
+  },
   openGraph: {
     title: "Client stories — Moresity Tech",
     description: "Reviews and stories from our clients.",
     url: "https://tech.moresityholdings.com.np/testimonials",
+    images: [
+      {
+        url: "https://tech.moresityholdings.com.np/logo3-transparent.png",
+        width: 1200,
+        height: 630,
+        alt: "Moresity Tech Testimonials",
+      },
+    ],
   },
 };
 

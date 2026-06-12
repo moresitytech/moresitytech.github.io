@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logoTransparent from "@/assets/logo3-transparent.png";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -62,7 +61,7 @@ export function Navbar() {
           <Link href="/" className="group flex items-center ">
             <div className="relative size-12 w-12 h-12 overflow-hidden rounded-full bg-transparent shadow-elegant">
               <img
-                src={typeof logoTransparent === "string" ? logoTransparent : logoTransparent.src}
+                src="/logo3-transparent.png"
                 alt="Moresity logo"
                 className="w-full h-full object-contain bg-transparent dark:invert"
                 decoding="async"

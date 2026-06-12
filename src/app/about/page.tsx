@@ -6,10 +6,21 @@ export const metadata: Metadata = {
   description:
     "We are a senior team of engineers, designers and product thinkers crafting software that lasts. Learn our story, values and team.",
   keywords: ["software studio", "team", "mission", "values", "engineers", "designers"],
+  alternates: {
+    canonical: "https://tech.moresityholdings.com.np/about",
+  },
   openGraph: {
     title: "About — Moresity Tech",
     description: "Our story, mission and the team behind Moresity Tech.",
     url: "https://tech.moresityholdings.com.np/about",
+    images: [
+      {
+        url: "https://tech.moresityholdings.com.np/logo3-transparent.png",
+        width: 1200,
+        height: 630,
+        alt: "About Moresity Tech",
+      },
+    ],
   },
 };
 

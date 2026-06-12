@@ -6,10 +6,21 @@ export const metadata: Metadata = {
   description:
     "Answers about engagements, pricing, process, services and support at Moresity Tech.",
   keywords: ["FAQ, frequently asked questions, pricing, services, support"],
+  alternates: {
+    canonical: "https://tech.moresityholdings.com.np/faq",
+  },
   openGraph: {
     title: "FAQ — Moresity Tech",
     description: "Frequently asked questions about working with us.",
     url: "https://tech.moresityholdings.com.np/faq",
+    images: [
+      {
+        url: "https://tech.moresityholdings.com.np/logo3-transparent.png",
+        width: 1200,
+        height: 630,
+        alt: "Moresity Tech FAQ",
+      },
+    ],
   },
 };
 

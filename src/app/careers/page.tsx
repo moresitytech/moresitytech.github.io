@@ -6,10 +6,21 @@ export const metadata: Metadata = {
   description:
     "Join a senior team building software that matters. Open roles in engineering, design and AI.",
   keywords: ["careers, jobs, hiring, engineering, design, remote work"],
+  alternates: {
+    canonical: "https://tech.moresityholdings.com.np/careers",
+  },
   openGraph: {
     title: "Careers — Moresity Tech",
     description: "Open roles and what it's like to work with us.",
     url: "https://tech.moresityholdings.com.np/careers",
+    images: [
+      {
+        url: "https://tech.moresityholdings.com.np/logo3-transparent.png",
+        width: 1200,
+        height: 630,
+        alt: "Moresity Tech Careers",
+      },
+    ],
   },
 };
 

@@ -1,0 +1,41 @@
+# Next.js SPA Routing - Apache (.htaccess)
+# Place this file in your public folder for static export
+
+# Rewrite everything to index.html for SPA routing
+RewriteEngine On
+RewriteBase /
+
+# Don't rewrite if the file/directory exists
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Rewrite everything else to index.html
+RewriteRule ^ index.html [L]
+
+# Disable caching for HTML files (SEO requirement)
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# Enable compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# Set proper content types for assets
+<IfModule mod_mime.c>
+  AddType application/font-woff2 woff2
+  AddType application/font-woff woff
+</IfModule>
